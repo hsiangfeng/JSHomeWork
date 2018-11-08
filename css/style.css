@@ -1,6 +1,6 @@
 @media (max-width: 767.98px) { 
     .bg-jumbotron{
-        background-image: url("/JaveScript/最終作業/JSHomeWork/img/Hero.png");
+        background-image: url("https://hsiangfeng.github.io/JSHomeWork/img/Hero.png");
         background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -12,7 +12,7 @@
     }
 }
 .bg-jumbotron{
-    background-image: url("/JaveScript/最終作業/JSHomeWork/img/Hero.png");
+    background-image: url("https://hsiangfeng.github.io/JSHomeWork/img/Hero.png");
     background-position: top center;
     background-repeat: no-repeat;
 }

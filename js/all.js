@@ -2607,10 +2607,7 @@ var listLen = data.length;
 
 //Setting DOM
 var selectArea = document.getElementById('selectArea');
-var btnArea1 = document.getElementById('btnArea-1');
-var btnArea2 = document.getElementById('btnArea-2');
-var btnArea3 = document.getElementById('btnArea-3');
-var btnArea4 = document.getElementById('btnArea-4');
+var btnArea = document.getElementById('btnArea');
 var listTitle = document.querySelector('#listTitle');
 var list = document.querySelector('#list');
 
@@ -2621,11 +2618,30 @@ $(document).ready(function () {
 
   //defalut web
   for (var i = 0; i < defalutLen; i++) {
-    defalut += '<div class="col-md-6 py-2 px-1"><div class="card"><div class="card bg-dark text-white text-left"><img class="card-img-top bg-cover" height="155px" src="' + data[i].Picture1 + '"><div class="card-img-overlay d-flex justify-content-between align-items-end p-0 px-3" style="background-color: rgba(0, 0, 0, .2)"><h5 class="card-img-title-lg">' + data[i].Name + '</h5><h5 class="card-img-title-sm">' + data[i].Zone + '</h5></div></div><div class="card-body text-left"><p class="card-p-text"><i class="far fa-clock fa-clock-time"></i>&nbsp;' + data[i].Opentime + '</p><p class="card-p-text"><i class="fas fa-map-marker-alt fa-map-gps"></i>&nbsp;' + data[i].Add + '</p><div class="d-flex justify-content-between align-items-end"><p class="card-p-text"><i class="fas fa-mobile-alt fa-mobile"></i>&nbsp;' + data[i].Tel + '</p><p class="card-p-text"><i class="fas fa-tags text-warning"></i>&nbsp;' + data[i].Ticketinfo + '</p></div></div></div></div>'
+    defalut += `
+    <div class="col-md-6 py-2 px-1">
+      <div class="card">
+        <div class="card bg-dark text-white text-left">
+          <img class="card-img-top bg-cover" height="155px" src="` + data[i].Picture1 + `">
+          <div class="card-img-overlay d-flex justify-content-between align-items-end p-0 px-3" style="background-color: rgba(0, 0, 0, .2)">
+            <h5 class="card-img-title-lg">` + data[i].Name + `</h5>
+            <h5 class="card-img-title-sm">` + data[i].Zone + `</h5>
+          </div>
+        </div>
+        <div class="card-body text-left">
+            <p class="card-p-text"><i class="far fa-clock fa-clock-time"></i>&nbsp;` + data[i].Opentime + `</p>
+            <p class="card-p-text"><i class="fas fa-map-marker-alt fa-map-gps"></i>&nbsp;` + data[i].Add + `</p>
+          <div class="d-flex justify-content-between align-items-end">
+            <p class="card-p-text"><i class="fas fa-mobile-alt fa-mobile"></i>&nbsp;` + data[i].Tel + `</p>
+            <p class="card-p-text"><i class="fas fa-tags text-warning"></i>&nbsp;` + data[i].Ticketinfo + `</p>
+          </div>
+        </div>
+      </div>
+    </div>`
     list.innerHTML = defalut;
     //console.log(list.innerHTML);
   };
-
+  selectDow();
   //gotop
   $('#gotop').gotop({
     customHtml: '<i class="fas fa-angle-up"></i>',
@@ -2643,7 +2659,24 @@ function updataList(e) {
   var str = '';
   for (var i = 0; i < listLen; i++) {
     if (select == data[i].Zone) {
-      str += '<div class="col-md-6 py-2 px-1"><div class="card"><div class="card bg-dark text-white text-left"><img class="card-img-top bg-cover" height="155px" src="' + data[i].Picture1 + '"><div class="card-img-overlay d-flex justify-content-between align-items-end p-0 px-3" style="background-color: rgba(0, 0, 0, .2)"><h5 class="card-img-title-lg">' + data[i].Name + '</h5><h5 class="card-img-title-sm">' + data[i].Zone + '</h5></div></div><div class="card-body text-left"><p class="card-p-text"><i class="far fa-clock fa-clock-time"></i>&nbsp;' + data[i].Opentime + '</p><p class="card-p-text"><i class="fas fa-map-marker-alt fa-map-gps"></i>&nbsp;' + data[i].Add + '</p><div class="d-flex justify-content-between align-items-end"><p class="card-p-text"><i class="fas fa-mobile-alt fa-mobile"></i>&nbsp;' + data[i].Tel + '</p><p class="card-p-text"><i class="fas fa-tags text-warning"></i>&nbsp;' + data[i].Ticketinfo + '</p></div></div></div></div>'
+      str += `<div class="col-md-6 py-2 px-1">
+        <div class="card">
+          <div class="card bg-dark text-white text-left">
+            <img class="card-img-top bg-cover" height="155px" src="` + data[i].Picture1 + `">
+            <div class="card-img-overlay d-flex justify-content-between align-items-end p-0 px-3" style="background-color: rgba(0, 0, 0, .2)">
+             <h5 class="card-img-title-lg">` + data[i].Name + `</h5><h5 class="card-img-title-sm">` + data[i].Zone + `</h5>
+           </div>
+          </div>
+          <div class="card-body text-left">
+              <p class="card-p-text"><i class="far fa-clock fa-clock-time"></i>&nbsp;` + data[i].Opentime + `</p>
+              <p class="card-p-text"><i class="fas fa-map-marker-alt fa-map-gps"></i>&nbsp;` + data[i].Add + `</p>
+            <div class="d-flex justify-content-between align-items-end">
+              <p class="card-p-text"><i class="fas fa-mobile-alt fa-mobile"></i>&nbsp;` + data[i].Tel + `</p>
+              <p class="card-p-text"><i class="fas fa-tags text-warning"></i>&nbsp;` + data[i].Ticketinfo + `</p>
+            </div>
+          </div>
+        </div>
+      </div>`
     };
   };
   list.innerHTML = str;
@@ -2654,18 +2687,49 @@ function selectList(e) {
   var str = '';
   for (var i = 0; i < listLen; i++) {
     if (select == data[i].Zone) {
-      str += '<div class="col-md-6 py-2 px-1"><div class="card"><div class="card bg-dark text-white text-left"><img class="card-img-top bg-cover" height="155px" src="' + data[i].Picture1 + '"><div class="card-img-overlay d-flex justify-content-between align-items-end p-0 px-3" style="background-color: rgba(0, 0, 0, .2)"><h5 class="card-img-title-lg">' + data[i].Name + '</h5><h5 class="card-img-title-sm">' + data[i].Zone + '</h5></div></div><div class="card-body text-left"><p class="card-p-text"><i class="far fa-clock fa-clock-time"></i>&nbsp;' + data[i].Opentime + '</p><p class="card-p-text"><i class="fas fa-map-marker-alt fa-map-gps"></i>&nbsp;' + data[i].Add + '</p><div class="d-flex justify-content-between align-items-end"><p class="card-p-text"><i class="fas fa-mobile-alt fa-mobile"></i>&nbsp;' + data[i].Tel + '</p><p class="card-p-text"><i class="fas fa-tags text-warning"></i>&nbsp;' + data[i].Ticketinfo + '</p></div></div></div></div>'
+      str += `<div class="col-md-6 py-2 px-1">
+        <div class="card">
+          <div class="card bg-dark text-white text-left">
+            <img class="card-img-top bg-cover" height="155px" src="` + data[i].Picture1 + `">
+            <div class="card-img-overlay d-flex justify-content-between align-items-end p-0 px-3" style="background-color: rgba(0, 0, 0, .2)">
+             <h5 class="card-img-title-lg">` + data[i].Name + `</h5><h5 class="card-img-title-sm">` + data[i].Zone + `</h5>
+           </div>
+          </div>
+          <div class="card-body text-left">
+              <p class="card-p-text"><i class="far fa-clock fa-clock-time"></i>&nbsp;` + data[i].Opentime + `</p>
+              <p class="card-p-text"><i class="fas fa-map-marker-alt fa-map-gps"></i>&nbsp;` + data[i].Add + `</p>
+            <div class="d-flex justify-content-between align-items-end">
+              <p class="card-p-text"><i class="fas fa-mobile-alt fa-mobile"></i>&nbsp;` + data[i].Tel + `</p>
+              <p class="card-p-text"><i class="fas fa-tags text-warning"></i>&nbsp;` + data[i].Ticketinfo + `</p>
+            </div>
+          </div>
+        </div>
+      </div>`
     };
   };
-  list.innerHTML = str;;
+  list.innerHTML = str;
 };
+function selectDow() {
+  var areaList = [];
+  for (var i = 0; i < listLen; i++) {
+    areaList.push(data[i].Zone); //將區域取出來放置areaList陣列中
+  };
 
+  var Zone = [];
+  areaList.forEach(function (value) {
+    if (Zone.indexOf(value) == -1) {
+      Zone.push(value);
+    };
+  });
+  var str = '';
+  for (var i = 0; i < Zone.length; i++) {
+    str += `<option value="` + Zone[i] + `">` + Zone[i] + `</option>`; //因為是陣列所以要用迴圈方式取得陣列
+  }
+  selectArea.innerHTML = str;
+}
 
 //參考target單元設置監聽事件
 //change為觸發下拉選單事件
 //click則是點擊事件
 selectArea.addEventListener('change', selectList, false);
-btnArea1.addEventListener('click', updataList, false);
-btnArea2.addEventListener('click', updataList, false);
-btnArea3.addEventListener('click', updataList, false);
-btnArea4.addEventListener('click', updataList, false);
+btnArea.addEventListener('click', updataList,false);

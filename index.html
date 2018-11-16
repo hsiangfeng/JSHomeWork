@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
             crossorigin="anonymous">
             <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://hsiangfeng.github.io/JSHomeWork/css/style.css">
+        <link rel="stylesheet" href="css/style.css">
         <title>Javascript + Bootstrap 4高雄旅遊資訊網 </title>
 
     </head>
@@ -20,7 +20,7 @@
     <body>
         <nav class="navbar navbar-expand-md" data-aos="fade-down" data-aos-duration="500" style="background-color: rgba(0, 0, 0, 0.9);">
             <a class="navbar-brand d-md-none" href="https://hsiangfeng.github.io/JSHomeWork">
-                <img src="https://hsiangfeng.github.io/JSHomeWork/img/logo.png" width="200px" class="img-fluid">
+                <img src="img/logo.png" width="200px" class="img-fluid">
             </a>
             <button class="navbar-toggler ml-auto text-white" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@
                         <a class="navbar-brand mx-2 d-none d-md-inline px-4" href="/">
                             <img src="/JSHomeWork/img/logo.png" width="100px" class="img-fluid" alt="高雄旅遊資訊網">
                         </a>
-                        <a class="nav-item nav-link text-white" style="font-size: 20px" href="https://hsiangfeng.github.io/JSHomeWork/bmi.html">
+                        <a class="nav-item nav-link text-white" style="font-size: 20px" href="bmi.html">
                             BMI計算
                         </a>
                     </div>
@@ -50,27 +50,23 @@
                         <label for="selectArea" class="h3 pt-3 pb-3">請選擇要查詢的區域</label>
                         <select name="selectArea" id="selectArea" class="form-control" style="background:rgba(255, 255, 255, .75); ">
                             <option value="請選擇行政區">----請選擇行政區----</option>
-                            <option value="三民區">三民區</option>
-                            <option value="前鎮區">前鎮區</option>
-                            <option value="苓雅區">苓雅區</option>
-                            <option value="鼓山區">鼓山區</option>
                         </select>
                     </div>
                 </div>
             </div>
             <div class="container text-center w-75 jumbotron-main" data-aos="fade-down" data-aos-duration="500">
-                <div class="row" style="background-color: rgba(0, 0, 0, 0.85);border-radius:5px;">
+                <div class="row" id="btnArea" style="background-color: rgba(0, 0, 0, 0.85);border-radius:5px;">
                     <div class="col-md-3 col-6 py-3">
-                        <button class="btn btn-outline-primary btn-block" id="btnArea-1" value="苓雅區">苓雅區</button>
+                        <button class="btn btn-outline-primary btn-block" value="苓雅區">苓雅區</button>
                     </div>
                     <div class="col-md-3 col-6 py-3">
-                        <button class="btn btn-outline-success btn-block" id="btnArea-2" value="三民區">三民區</button>
+                        <button class="btn btn-outline-success btn-block"  value="三民區">三民區</button>
                     </div>
                     <div class="col-md-3 col-6 py-3">
-                        <button class="btn btn-outline-warning btn-block" id="btnArea-3" value="新興區">新興區</button>
+                        <button class="btn btn-outline-warning btn-block" value="新興區">新興區</button>
                     </div>
                     <div class="col-md-3 col-6 py-3">
-                        <button class="btn btn-outline-info btn-block" id="btnArea-4" value="鼓山區">鼓山區</button>
+                        <button class="btn btn-outline-info btn-block" value="鼓山區">鼓山區</button>
                     </div>
                 </div>
             </div>
@@ -105,8 +101,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
             crossorigin="anonymous"></script>
             <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="https://hsiangfeng.github.io/JSHomeWork/js/all.js"></script>
-        <script src="https://hsiangfeng.github.io/JSHomeWork/js/jquery.gotop.js"></script>
+        <script src="js/all.js"></script>
+        <script src="js/jquery.gotop.js"></script>
         <div id="gotop"></div>
     </body>
 
